@@ -12,5 +12,5 @@
 
 * StackStorm の利用事例
   - (NTT テクノクロスの事例 -仮-) (萬治さん)
-  - (インターネットマルチフィードの事例 -仮-) (杉本さん)
+  - [StackStormはデータセンターのダクトテープ！？](https://github.com/userlocalhost/st2-draft-for-ops/blob/master/mfeed.md) (杉本さん)
   - [DMM.com ラボが目指す運用プラットフォーム](https://github.com/userlocalhost/st2-draft-for-ops/blob/master/chapter2.md) (大山)
