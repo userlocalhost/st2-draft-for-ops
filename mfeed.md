@@ -1,10 +1,10 @@
 ### StackStormはデータセンターのダクトテープ！？
 
-DmitriがStackStormの紹介をする際、よくそのプレゼンテーションで、StackStormを上記のように例えています。これは、StackStormがもたらす自動化が、何か全く新しい仕組みでもって実現される物、ではなく、既存のシステムやソフトウェアを十分に活かし、それらを **つなぎ合わせて** 結果的に自動化を達成するというものであるという側面を表すのにピッタリの言葉だと思います。
+StackStorm創立メンバーの[Dmitri](https://stackstorm.com/team/)がStackStormの紹介をする際、よくそのプレゼンテーションで、StackStormを上記のように例えています。これは、StackStormがもたらす自動化が、何か全く新しい仕組みでもって実現される物、ではなく、既存のシステムやソフトウェアを十分に活かし、それらを **つなぎ合わせて** 結果的に自動化を達成するというものであるという側面を表すのにピッタリの言葉だと思います。
 
 弊社インターネットマルチフィード(以下、MF)においても、StackStormは社内に存在する複数のシステムを「つなぎ合わせて」自動化を達成する、という点で非常に大きな役割を果たしました。弊社の取り組みの中で、StackStormを導入するに至った経緯と、その効果を以下に紹介します。
 
-(本記事と併せて、StackStorm勉強会 第2回のスライド・動画をご覧いただくと、より分かりやすいと思います。)
+(本記事と併せて、[StackStorm勉強会 第2回のスライド](https://www.slideshare.net/shusugimoto1986/ixstackstorm)・動画をご覧いただくと、より分かりやすいと思います。)
 
 ### JPNAPでの自動化のはじまり、そして直面した課題
 
@@ -35,7 +35,7 @@ StackStormを導入したことによって得られたものとして挙げら�
 
 #### 高い再利用性
 
-WorkflowもActionも、StackStormではYAMLファイルで定義し、それらをPack単位でまとめて管理します。ここで、社内の各システムに対応するPackをつくってActionをまとめておくと、そのシステムを使う他の業務フローも定義しやすくなります。
+WorkflowもActionも、StackStormではYAMLファイルで定義し、それらを[Pack](https://docs.stackstorm.com/packs.html)(AWS, Docker, Sensu などのサードパーティのシステムごとの監視・制御する機能をまとめたモノ)単位でまとめて管理します。ここで、社内の各システムに対応するPackをつくってActionをまとめておくと、そのシステムを使う他の業務フローも定義しやすくなります。
 
 #### キューイングと排他制御の実現
 
@@ -71,4 +71,4 @@ StackStormではActionやWorkflowは全てYAMLで記述します。つまり、g
 
 ここまで、StackStormの弊社での具体的な使用例と、それによって得られた効果を紹介しました。今後は、既に作ったPackを活用し更に自動化を進めていきたいと考えています。また、Auto Remediation = 障害が発生した際の自動復旧等も検討していこうと思います。
 
-ちなみに余談ですが、Auto Remediationで使う場合等は特に、StackStorm自体のHAが課題になると思います。弊社ではStackStormの公式DockerイメージをKubernetesクラスタ上で動かすことを検証しており、これによってHAを実現しようと考えております。興味のある方は[st2-dockerレポジトリのドキュメント]()をご覧ください。またStackStorm公式Slackの#dockerチャネルでも質問等受け付けております。
+ちなみに余談ですが、Auto Remediationで使う場合等は特に、StackStorm自体のHAが課題になると思います。弊社ではStackStormの公式DockerイメージをKubernetesクラスタ上で動かすことを検証しており、これによってHAを実現しようと考えております。興味のある方は[StackStorm Docker Image のドキュメント](https://stackstorm.com/2017/04/21/official-stackstorm-docker-image-here/)をご覧ください。またStackStorm公式Slackの[#docker](https://stackstorm-community.slack.com/messages/C4QEPNE85/)チャネルでも質問等受け付けております。
